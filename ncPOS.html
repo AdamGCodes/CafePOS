@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./ncPOS.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Water+Brush&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Cafe In The Park POS</title>
+</head>
+
+<body>
+<div class="container myContainer">      
+    <div class="row"> <!--Row 1 of the interface (there will be nesting (grids in grids for interface))-->
+        <div class="col-12 col-md-3 text-center">
+            <div id="tabNumAlign">
+                <label for="tableNum">Table Number</label>
+                <select name="tableNum" id="tableNum">
+                    <option value="" id="" selected disabled>#</option>
+                    <option value="Table 1" id="tab1">1</option>
+                    <option value="Table 2" id="tab2">2</option>
+                    <option value="Table 3" id="tab3">3</option>
+                    <option value="Table 4" id="tab4">4</option>
+                    <option value="Table 5" id="tab5">5</option>
+                    <option value="Table 6" id="tab6">6</option>
+                    <option value="Table 7" id="tab7">7</option>
+                    <option value="Table 8" id="tab8">8</option>
+                    <option value="Table 9" id="tab9">9</option>
+                    <option value="Table 10" id="tab10">10</option>
+                    <option value="Table 11" id="tab11">11</option>
+                    <option value="Table 12" id="tab12">12</option>
+                    <option value="Table 13" id="tab13">13</option>
+                    <option value="Table 14" id="tab14">14</option>
+                    <option value="Table 15" id="tab15">15</option>
+                    <option value="" id="no_table">No Table</option>
+                </select>
+            </div>
+        </div>
+        <div class ="col-12 col-lg-6"><!--Col for table number-->
+           <!--Empty Space-->
+        </div>
+        <div class ="col-12 col-lg-3"><!--Header-->
+            <div class="headerBox">
+                <h1>P.O.S. In The Park</h1>
+            </div>
+        </div>
+    </div>
+    <div class="row"><!--Row 1 of the inteface (will be nesting)-->
+        <div class="col-12 col-md-6  gridScroll" id="itemList"style="display:none"><!--Col 1.1 Table no, and card/button for each product-->
+            <div class="row text-center g-0" ><!--First row of menu item list-->
+                <div class ="col-6 col-lg-4"><!--Cake-->
+                    <div class="cardStyle">
+                        <div>
+                            <a data-bs-toggle="collapse" href="#collapseCake" role="button" aria-expanded="false" aria-controls="collapseCake" >
+                            <div class="cardImgBox">
+                                <img src="./images/cake-slice.jpg" alt="Slice of rich looking chocolate cake on a plate and topped with a strawberry.">
+                            </div>
+                            <h5>Cake</h5>
+                            </a>                        
+                            <div class="form-group collapse formFields" id="collapseCake">
+                                <form id="cakeForm">    
+                                    <select class= "form-control" name="cakeChoice" id="cakeChoice">
+                                        <Option value="" selected disabled>Cake Choice</option>
+                                        <option value="chocolate">Chocolate</option>
+                                        <option value="victoriaSponge">Victoria Sponge</option>
+                                        <option value="lemonDrizle">Lemon Drizzle</option>
+                                        <option value="coffeeCake">CoffeeCake</option>
+                                    </select>
+                                    <select class= "form-control formFields" name="cakeOptions" id="cakeOptions">
+                                        <option value="" selected disabled>On The Side</option>
+                                        <option value="onItsOwn">On Its Own</option>
+                                        <option value="cream">Cream</option>
+                                        <option value="iceCream">Ice Cream</option>
+                                    </select>
+                                    <select class= "form-control formFields" name="cakeGF" id="cakeGF">
+                                        <option value="" selected disabled>Gluten Free?</option>
+                                        <option value="***GLUTEN FREE!***">Yes</option>
+                                        <option value=" ">No</option>
+                                    </select>
+                                </form>
+                                <a class="btn btn-primary" id="addCake">Add to Order</a>
+                            </div>
+                        </div>
+                    </div>     
+                </div>
+                <div class ="col-6 col-lg-4"><!--Baguette-->
+                    <div class="cardStyle">
+                        <div>
+                            <a data-bs-toggle="collapse" href="#collapseBaguette" role="button" aria-expanded="false" aria-controls="collapseBaguette" >
+                            <div class="cardImgBox">
+                                <img src="./images/filled-baguette.jpg" alt="Rustic baguette with filling of ham and salad">
+                            </div>
+                            <h5>Baguette</h5>
+                            </a>                        
+                            <div class="form-group collapse formFields" id="collapseBaguette">
+                                <form id="baguetteForm">
+                                    <select class= "form-control" name="baguetteChoice" id="baguetteChoice">
+                                        <option value="" selected disabled>Filling</option>
+                                        <option value="cheese">Chedar Cheese</option>
+                                        <option value="hamCheese">Ham and Cheese</option>
+                                        <option value="chickCheese">Chicken and Cheese</option>
+                                        <option value="brieCranberry">Brie and Cranbery Jam</option>
+                                        <option value="veganSausage">Vegan Sausage and Onion</option>
+                                    </select>
+                                    <select class= "form-control formFields" name="baguetteOptions" id="baguetteOptions">
+                                        <option value="" selected disabled>Bread</option>
+                                        <option value="white">White</option>
+                                        <option value="brown">Brown</option>
+                                    </select>
+                                    <select class= "form-control formFields" name="baguetteGF" id="baguetteGF">
+                                        <option value="" selected disabled>Gluten Free?</option>
+                                        <option value="***GLUTEN FREE!***">Yes</option>
+                                        <option value=" ">No</option>
+                                    </select>
+                                </form>
+                                <a class="btn btn-primary" id="addBaguette">Add to Order</a>
+                            </div>
+                        </div>
+                    </div>     
+                </div>
+                <div class ="col-6 col-lg-4"><!--Roll-->
+                    <div class="cardStyle">
+                        <div>
+                            <a data-bs-toggle="collapse" href="#collapseRoll" role="button" aria-expanded="false" aria-controls="collapseRoll" >
+                            <div class="cardImgBox">
+                                <img src="./images/roll.jpg" alt="seasame seed roll with chicken and salad filling">
+                            </div>
+                            <h5>Roll</h5>
+                            </a>                        
+                            <div class="form-group collapse formFields" id="collapseRoll">
+                                <form id="rollForm">
+                                    <select class= "form-control" name="rollChoice" id="rollChoice">
+                                        <option value="" selected disabled>Filling</option>
+                                        <option value="chickenSalad">Chicken Salad</option>
+                                        <option value="cheeseTomato">Cheese and Tomato</option>
+                                        <option value="veganHam">Vegan Ham</option>
+                                        <option value="cheeseMarmite">Cheese and Marmite</option>
+                                    </select>
+                                    <select class= "form-control formFields" name="rollOptions" id="rollOptions">
+                                        <option value="" selected disabled>Bread</option>
+                                        <option value="white">White</option>
+                                        <option value="brown">Brown</option>
+                                    </select>
+                                    <select class= "form-control formFields" name="rollGF" id="rollGF">
+                                        <option value="" selected disabled>Gluten Free?</option>
+                                        <option value="***GLUTEN FREE!***">Yes</option>
+                                        <option value=" ">No</option>
+                                    </select>
+                                </form>
+                                <a href="#" class="btn btn-primary" id="addRoll">Add to Order</a>
+                            </div>
+                        </div>
+                    </div>     
+                </div>
+                <div class ="col-6 col-lg-4"><!--Sandwich-->
+                    <div class="cardStyle">
+                        <div>
+                            <a data-bs-toggle="collapse" href="#collapseSandwich" role="button" aria-expanded="false" aria-controls="collapseSandwich">
+                            <div class="cardImgBox">
+                                <img src="./images/sandwhich.jpg" alt="Tosted white bread sandwich with avacado and soft cheese filling.">
+                            </div>
+                            <h5>Sandwich</h5>
+                            </a>                        
+                            <div class="form-group collapse formFields" id="collapseSandwich">
+                                <form id="sandwichForm">
+                                    <select class= "form-control" name="sandwichChoice" id="sandwichChoice">
+                                        <option value="" selected disabled>Filling</option>
+                                        <option value="cheesePickle">Cheese and Pickle</option>
+                                        <option value="fishfinger">Fishfinger</option>
+                                        <option value="veganMexChicken">Vegan Mexican Chicken</option>
+                                        <option value="eggMayo">Egg Mayonaise</option>
+                                        <option value="avocadoCheese">Avocado and Cream Cheese</option>
+                                    </select>
+                                    <select class= "form-control formFields" name="sandwichOptions" id="sandwichOptions">
+                                        <option value="" selected disabled>Bread</option>
+                                        <option value="white">White</option>
+                                        <option value="brown">Brown</option>
+                                    </select>
+                                    <select class= "form-control formFields" name="sandwichGF" id="sandwichGF">
+                                        <option value="" selected disabled>Gluten Free?</option>
+                                        <option value="***GLUTEN FREE!***">Yes</option>
+                                        <option value=" ">No</option>
+                                    </select>
+                                </form>    
+                                <a href="#" class="btn btn-primary" id="addSandwich">Add to Order</a>
+                            </div>
+                        </div>
+                    </div>     
+                </div>
+                <div class ="col-6 col-lg-4"><!--Pizza-->
+                    <div class="cardStyle">
+                        <div>
+                            <a data-bs-toggle="collapse" href="#collapsePizza" role="button" aria-expanded="false" aria-controls="collapsePizza">
+                            <div class="cardImgBox">
+                                <img src="./images/pizza.jpg" alt="Slice of pizza with sausage topping">
+                            </div>
+                            <h5>Pizza</h5>
+                            </a>                        
+                            <div class="form-group collapse formFields" id="collapsePizza">
+                                <form id="pizzaForm">
+                                    <select class= "form-control" name="pizzaChoice" id="pizzaChoice">
+                                        <option value="" selected disabled>Options</option>
+                                        <option value="margherita">Margherita</option>
+                                        <option value="sausageChilli">Sausage & Chilli</option>
+                                        <option value="veggie">Veggie Special</option>
+                                        <option value="veganHamPineapple">(Ve)Ham & Pineapple</option>
+                                    </select>
+                                    <select class= "form-control formFields" name="pizzaGF" id="pizzaGF">
+                                        <option value="" selected disabled>Gluten Free?</option>
+                                        <option value="***GLUTEN FREE!***">Yes</option>
+                                        <option value=" ">No</option>
+                                    </select>
+                                </form>    
+                                <a href="#" class="btn btn-primary" id="addPizza">Add to Order</a>
+                            </div>
+                        </div>
+                    </div>     
+                </div>
+                <div class ="col-6 col-lg-4"><!--Doughnut-->
+                    <div class="cardStyle">
+                        <div>
+                            <a data-bs-toggle="collapse" href="#collapseDoughnut" role="button" aria-expanded="false" aria-controls="collapseDoughnut" >
+                            <div class="cardImgBox">
+                                <img src="./images/doughnut.jpg" alt="Two glazed ring doughnuts. One coffee glazed the other chocolate glazed.">
+                            </div>
+                            <h5>Doughnut</h5>
+                            </a>                        
+                            <div class="form-group collapse formFields" id="collapseDoughnut">
+                                <form id="doughnutForm">
+                                    <select class= "form-control" name="doughnutChoice" id="doughnutChoice">
+                                        <option value="" selected disabled>Doughnut Choice</option>
+                                        <option value="chocolateGlazed">Chocolate Glazed</option>
+                                        <option value="coffeeGlazed">Coffee Glazed</option>
+                                        <option value="strawJamFilled">Strawberry Jam Filled</option>
+                                        <option value="caramelFilled">Caramel Filled</option>
+                                    </select>
+                                </form>
+                                <a href="#" class="btn btn-primary" id="addDoughnut">Add to Order</a>
+                            </div>
+                        </div>
+                    </div>     
+                </div>
+                <div class ="col-6 col-lg-4"><!--Crisps-->
+                    <div class="cardStyle">
+                        <div>
+                            <a data-bs-toggle="collapse" href="#collapseCrisps" role="button" aria-expanded="false" aria-controls="collapseCrisps" >
+                            <div class="cardImgBox">
+                                <img src="./images/crisps.jpg" alt="Close up image of crisps.">
+                            </div>
+                            <h5>Crisps</h5>
+                            </a>                        
+                            <div class="form-group collapse formFields" id="collapseCrisps">
+                                <form id="crispsForm">
+                                    <select class= "form-control" name="crispsChoice" id="crispsChoice">
+                                        <option value="" selected disabled>Flavour</option>
+                                        <option value="salted">Lightly Salted</option>
+                                        <option value="cheeseOnion">Cheese and Onion</option>
+                                        <option value="saltVinigar">Salt and Vinigar</option>
+                                        <option value="rosmarySalted">Rosmary Salted</option>
+                                    </select>
+                                </form>
+                                <a href="#" class="btn btn-primary" id="addCrisps">Add to Order</a>
+                            </div>
+                        </div>
+                    </div>     
+                </div>
+                <div class ="col-6 col-lg-4"><!--Potato Wedges-->
+                    <div class="cardStyle">
+                        <div>
+                            <a data-bs-toggle="collapse" href="#collapseWedges" role="button" aria-expanded="false" aria-controls="collapseWedges" >
+                            <div class="cardImgBox">
+                                <img src="./images/potato-wedges.jpg" alt="Close up of potato wedges.">
+                            </div>
+                            <h5>Wedges</h5>
+                            </a>                        
+                            <div class="form-group collapse formFields" id="collapseWedges">
+                                <form id="wedgesForm">
+                                    <select class= "form-control" name="wedgesChoice" id="wedgesChoice">
+                                        <option value="" selected disabled>Cake Choice</option>
+                                        <option value="small">Small</option>
+                                        <option value="large">Large</option>
+                                    </select>
+                                    <select class= "form-control formFields" name="wedgesOptions" id="wedgesOptions">
+                                        <option value="" selected disabled>Dips</option>
+                                        <option value="no dip">None</option>
+                                        <option value="sourCream">Sour Cream</option>
+                                        <option value="sweetChilli">Sweet Chilli</option>
+                                        <option value="bbq">BBQ</option>
+                                    </select>
+                                </form>
+                                <a href="#" class="btn btn-primary" id="addWedges">Add to Order</a>
+                            </div>
+                        </div>
+                    </div>     
+                </div>
+                <div class ="col-6 col-lg-4"><!--Coffee-->
+                    <div class="cardStyle">
+                        <div>
+                            <a data-bs-toggle="collapse" href="#collapseCoffee" role="button" aria-expanded="false" aria-controls="collapseCoffee" >
+                            <div class="cardImgBox">
+                                <img src="./images/coffee.jpg" alt="Blue cup containing a latte with heart design in milk.">
+                            </div>
+                            <h5>Coffee</h5>
+                            </a>                        
+                            <div class="form-group collapse formFields" id="collapseCoffee">
+                                <form id="coffeeForm">
+                                    <select class= "form-control" name="coffeeChoice" id="coffeeChoice">
+                                        <option value="" selected disabled>Select Coffee</option>
+                                        <option value="americano">Americano</option>
+                                        <option value="latte">Latte</option>
+                                        <option value="cappuccion">Cappuccion</option>
+                                        <option value="espresso">Espresso</option>
+                                        <option value="flatWhite">Flat White</option>
+                                    </select>
+                                    <select class= "form-control formFields" name="coffeeOptions" id="coffeeOptions">
+                                        <option value="" selected disabled>Milk</option>
+                                        <option value="none">None</option>
+                                        <option value="cream">Cream</option>
+                                        <option value="semiSkimmed">Semi-skimmed</option>
+                                        <option value="Skimmed">Skimmed</option>
+                                        <option value="soya">Soya Milk</option>
+                                        <option value="almond">Almond Milk</option>
+                                    </select>
+                                </form>
+                                <a href="#" class="btn btn-primary" id="addCoffee">Add to Order</a>
+                            </div>
+                        </div>
+                    </div>     
+                </div>
+                <div class ="col-6 col-lg-4"><!--Tea-->
+                    <div class="cardStyle">
+                        <div>
+                            <a data-bs-toggle="collapse" href="#collapseTea" role="button" aria-expanded="false" aria-controls="collapseTea" >
+                            <div class="cardImgBox">
+                                <img src="./images/tea.jpg" alt="Cup of tea in a floral print teacup.">
+                            </div>
+                            <h5>Tea</h5>
+                            </a>                        
+                            <div class="form-group collapse formFields" id="collapseTea">
+                                <form id="teaForm">
+                                    <select class= "form-control" name="teaChoice" id="teaChoice">
+                                        <option value="" selected disabled>Select Tea</option>
+                                        <option value="breakfast">Breakfast</option>
+                                        <option value="earlGray">Earl Grey</option>
+                                        <option value="green">Green Tea</option>
+                                    </select>
+                                    <select class= "form-control formFields" name="teaOptions" id="teaOptions">
+                                        <option value="" selected disabled>Milk</option>
+                                        <option value="none">None</option>
+                                        <option value="cream">Cream</option>
+                                        <option value="semiSkimmed">Semi-skimmed</option>
+                                        <option value="Skimmed">Skimmed</option>
+                                        <option value="soya">Soya Milk</option>
+                                        <option value="almond">Almond Milk</option>
+                                    </select>
+                                </form>
+                                <a href="#" class="btn btn-primary" id="addTea">Add to Order</a>
+                            </div>
+                        </div>
+                    </div>     
+                </div>
+                <div class ="col-6 col-lg-4"><!--Herbal Tea-->
+                    <div class="cardStyle">
+                        <div>
+                            <a data-bs-toggle="collapse" href="#collapseHTea" role="button" aria-expanded="false" aria-controls="collapseHTea" >
+                            <div class="cardImgBox">
+                                <img src="./images/herbal-tea.jpg" alt="Two class cups containing mint tea.">
+                            </div>
+                            <h5>Herbal Tea</h5>
+                            </a>                        
+                            <div class="form-group collapse formFields" id="collapseHTea">
+                                <form id="hTeaForm">
+                                    <select class= "form-control" name="hTeaChoice" id="hTeaChoice">
+                                        <option value="" selected disabled>Select Tea</option>
+                                        <option value="mint">Mint</option>
+                                        <option value="matcha">Matcha</option>
+                                        <option value="lemon">Lemon</option>
+                                        <option value="ginger">Ginger</option>
+                                        <option value="chamomile">Chamomile</option>
+                                    </select>
+                                </form>
+                                <a class="btn btn-primary" id="addHTea">Add to Order</a>
+                            </div>
+                        </div>
+                    </div>     
+                </div>
+                <div class ="col-6 col-lg-4"><!--Iced Coffee-->
+                    <div class="cardStyle">
+                        <div>
+                            <a data-bs-toggle="collapse" href="#collapseIceCoffee" role="button" aria-expanded="false" aria-controls="collapseIceCoffee" >
+                            <div class="cardImgBox">
+                                <img src="./images/iced-coffee.jpg" alt="Tall glass of ice coffee with cream on top and hart shaped waffle biscuit on edge of glace.">
+                            </div>
+                            <h5>Ice Coffee</h5>
+                            </a>                        
+                            <div class="form-group collapse formFields" id="collapseIceCoffee">
+                                <form id="iceCoffeeForm">
+                                    <select class= "form-control" name="iceCoffeeChoice" id="iceCoffeeChoice">
+                                        <option value="" selected disabled>Size</option>
+                                        <option value="large">Large</option>
+                                        <option value="small">Small</option>
+                                    </select>
+                                    <select class= "form-control formFields" name="iceCoffeeOptions" id="iceCoffeeOptions">
+                                        <option value="" selected disabled>Milk</option>
+                                        <option value="semiSkimmed">Semi-skimmed</option>
+                                        <option value="Skimmed">Skimmed</option>
+                                        <option value="soya">Soya Milk</option>
+                                        <option value="almond">Almond Milk</option>
+                                    </select>
+                                </form>
+                                <a href="#" class="btn btn-primary" id="addIceCoffee">Add to Order</a>
+                            </div>
+                        </div>
+                    </div>     
+                </div>
+                <div class ="col-6 col-lg-4"><!--Milkshake-->
+                    <div class="cardStyle">
+                        <div>
+                            <a data-bs-toggle="collapse" href="#collapseMilkshake" role="button" aria-expanded="false" aria-controls="collapseMilkshake" >
+                            <div class="cardImgBox">
+                                <img src="./images/milkshake.jpg" alt="Four tall glasses of milkshake.">
+                            </div>
+                            <h5>Milkshake</h5>
+                            </a>                        
+                            <div class="form-group collapse formFields" id="collapseMilkshake">
+                                <form id="milkshakeForm">
+                                    <select class= "form-control" name="milkshakeChoice" id="milkshakeChoice">
+                                        <option value="" selected disabled>Flavour</option>
+                                        <option value="chocolate">Chocolate</option>
+                                        <option value="vanilla">Vanilla</option>
+                                        <option value="strawberry">Strawberry</option>
+                                        <option value="oreo">Oreo</option>
+                                    </select>
+                                    <select class= "form-control formFields" name="milkshakeOptions" id="milkshakeOptions">
+                                        <option value="" selected disabled>Milk</option>
+                                        <option value="semiSkimmed">Semi-skimmed</option>
+                                        <option value="Skimmed">Skimmed</option>
+                                        <option value="soya">Soya Milk</option>
+                                        <option value="almond">Almond Milk</option>
+                                    </select>
+                                </form>
+                                <a href="#" class="btn btn-primary" id="addMilkshake">Add to Order</a>
+                            </div>
+                        </div>
+                    </div>     
+                </div>
+                <div class ="col-6 col-lg-4"><!--Fruit Juice-->
+                    <div class="cardStyle">
+                        <div>
+                            <a data-bs-toggle="collapse" href="#collapseJuice" role="button" aria-expanded="false" aria-controls="collapseJuice" >
+                            <div class="cardImgBox">
+                                <img src="./images/fruit-juice.jpg" alt="Three glaces of fruit juice surrounded by fresh produce.">
+                            </div>
+                            <h5>Fruit Juice</h5>
+                            </a>                        
+                            <div class="form-group collapse formFields" id="collapseJuice">
+                                <form id="juiceForm">
+                                    <select class= "form-control" name="juiceChoice" id="juiceChoice">
+                                        <option value="" selected disabled>Flavour</option>
+                                        <option value="apple">Apple</option>
+                                        <option value="orange">Orange</option>
+                                        <option value="mangoRaspberry">Mango & Raspberry</option>
+                                        <option value="lemonLime">Lemon & Lime</option>
+                                    </select>
+                                </form>
+                                <a href="#" class="btn btn-primary" id="addJuice">Add to Order</a>
+                            </div>
+                        </div>
+                    </div>     
+                </div>
+                <div class ="col-6 col-lg-4"><!--Soft Drink-->
+                    <div class="cardStyle">
+                        <div>
+                            <a data-bs-toggle="collapse" href="#collapseSoda" role="button" aria-expanded="false" aria-controls="collapseSoda" >
+                            <div class="cardImgBox">
+                                <img src="./images/coke.jpg" alt="Can of coke.">
+                            </div>
+                            <h5>Soft Drink</h5>
+                            </a>                        
+                            <div class="form-group collapse formFields" id="collapseSoda">
+                                <form id="sodaForm">
+                                    <select class= "form-control" name="sodaChoice" id="sodaChoice">
+                                        <option value="" selected disabled>Options</option>
+                                        <option value="coke">Coke</option>
+                                        <option value="dietCoke">Diet Coke</option>
+                                        <option value="spriteZero">Sprite Zero</option>
+                                        <option value="fantaZero">Fanta Zero</option>
+                                    </select>
+                                </form>
+                                <a href="#" class="btn btn-primary" id="addSoda">Add to Order</a>
+                            </div>
+                        </div>
+                    </div>     
+                </div>
+                <div class ="col-6 col-lg-4"><!--Water-->
+                    <div class="cardStyle">
+                        <div>
+                            <a data-bs-toggle="collapse" href="#collapseWater" role="button" aria-expanded="false" aria-controls="collapseWater" >
+                            <div class="cardImgBox">
+                                <img src="./images/water.jpg" alt="Bottle of water.">
+                            </div>
+                            <h5>Water</h5>
+                            </a>                        
+                            <div class="form-group collapse formFields" id="collapseWater">
+                                <form id="waterForm">
+                                    <select class= "form-control" name="waterChoice" id="waterChoice">
+                                        <option value="" selected disabled>Size</option>
+                                        <option value="small">Small 450ml</option>
+                                        <option value="large">Large 750ml</option>
+                                    </select>
+                                </form>
+                                <a href="#" class="btn btn-primary" id="addWater">Add to Order</a>
+                            </div>
+                        </div>
+                    </div>     
+                </div>
+            </div>
+        </div>    
+        <div class="col-12 col-md-3"><!--Col 1.2 Output screen to show current order details-->
+            <div class="form-group">
+                <label for="orderDisplay">Order Summary</label>
+                <textarea class="form-control" name="tabNumDisplay" id="tabNumDisplay" rows="1" readonly></textarea>
+                <textarea class="form-control overflow-auto" name="orderDisplay" id="orderDisplay" rows="11" readonly></textarea>
+                <button type="button" class="myBtn" id="clearBtn">Clear Order</button>
+                <button type="button" class="myBtn"id="orderBtn">Place Order</button>
+                <button type="button" class="myBtn"id="newOrderBtn">New Order</button> 
+            </div>
+        </div>
+        <div class="col-12 col-md-3"><!--Col 1.3 Keypad and buttons-->    
+            <div class="row g-0"><!--Payment Method--> 
+                <div class ="col text-center">
+                    <label for="payMethod">Payment</label>
+                <select name="payChoice" id="payChoice"  class="crdFrm">
+                    <option value="" id="" selected disabled>Payment Method</option>
+                    <option value="payCard" id="payCard">Card/Contactless</option>
+                    <option value="payCash" id="payCash">Cash</option>
+                    <option value="payCode" id="payCode">Discount Code</option>
+                </select>
+                </div>
+            </div> <br>
+            <div class="row g-0"  id="cardPayment" style="display:none"><!--Card Payment--> 
+                <div class ="col text-center">
+                    <form action="">
+                        <label for="cardType">Card Type</label>
+                        <select name="cardType" id="cardType"  class="crdFrm">
+                        <option value="" id="" selected disabled>Card Type</option>
+                        <option value="Visa" id="visa">Visa/Visa Debit</option>
+                        <option value="MC" id="MC">Master Card</option>
+                        <option value="Amex" id="amex">Amex</option>
+                        </select>
+                        <label for="cardNo">Card Number</label>
+                        <input type="text" name="cardNo" id="cardNo" placeholder="Card Number"   class="crdFrm">
+                        <label for="expDate">Expiry Date</label>
+                        <div class="row g-0">
+                            <div class ="col-5 text-center">
+                                <select name="expMonth" id="expMonth"  class="crdFrm">
+                                    <option value="" id="" selected disabled>MM</option>
+                                    <option value="Jan" id="Jan">Jan</option>
+                                    <option value="Feb" id="Feb">Feb</option>
+                                    <option value="Mar" id="Mar">Mar</option>
+                                    <option value="Apr" id="Apr">Apr</option>
+                                    <option value="May" id="May">May</option>
+                                    <option value="Jun" id="Jun">Jun</option>
+                                    <option value="Jul" id="Jul">Jul</option>
+                                    <option value="Aug" id="Aug">Aug</option>
+                                    <option value="Sep" id="Sep">Sep</option>
+                                    <option value="Oct" id="Oct">Oct</option>
+                                    <option value="Nov" id="Nov">Nov</option>
+                                    <option value="Dec" id="Dec">Dec</option>
+                                </select>
+                            </div>
+                            <div class ="col-1">
+                                <p>/</p>
+                            </div>
+                            <div class ="col-5">
+                                <select name="expYear" id="expYear" class="crdFrm">
+                                    <option value="" id="" selected disabled>YY</option>
+                                    <option value="2022" id="2022">2022</option>
+                                    <option value="2023" id="2023">2023</option>
+                                    <option value="2024" id="2024">2024</option>
+                                    <option value="2025" id="2025">2025</option>
+                                    <option value="2026" id="2026">2026</option>
+                                    <option value="2027" id="2027">2027</option>
+                                    <option value="2028" id="2028">2028</option>
+                                    <option value="2029" id="2029">2029</option>
+                                    <option value="2030" id="2030">2030</option>
+                                </select>
+                            </div>                        
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row g-0"  id="cashPayment" style="display:none"><!--Cash Payment--> 
+                <div class ="col text-center">
+                    <div class="row g-0 text-center" ><!--1st Row keypad-->
+                        <div class ="col">
+                            <button data-number type="button" class="numBtn" id="btn7">7</button>
+                        </div>
+                        <div class ="col">
+                            <button data-number type="button" class="numBtn" id="btn8">8</button>
+                        </div>
+                        <div class ="col">
+                            <button data-number type="button" class="numBtn" id="btn9">9</button>
+                        </div>
+                    </div>
+                    <div class="row g-0 text-center"><!--2nd Row keypad-->
+                        <div class ="col">
+                            <button data-number type="button" class="numBtn" id="btn4">4</button>
+                        </div>
+                        <div class ="col">
+                            <button data-number type="button" class="numBtn" id="btn5">5</button>
+                        </div>
+                        <div class ="col">
+                            <button data-number type="button" class="numBtn" id="btn6">6</button>
+                        </div>
+                    </div>
+                    <div class="row g-0 text-center"><!--3rd Row keypad-->
+                        <div class ="col">
+                            <button data-number type="button" class="numBtn" id="btn1">1</button>
+                        </div>
+                        <div class ="col">
+                            <button data-number type="button" class="numBtn" id="btn2">2</button>
+                        </div>
+                        <div class ="col">
+                            <button data-number type="button" class="numBtn" id="btn3">3</button>
+                        </div>
+                    </div>
+                    <div class="row g-0 text-center"><!--4th Row keypad-->
+                        <div class ="col">
+                            <button data-number type="button" class="numBtn" id="btnDecimal">.</button>
+                        </div>
+                        <div class ="col">
+                            <button data-number type="button" class="numBtn" id="btn0">0</button>
+                        </div>
+                        <div class ="col">
+                            <button data-all-clear type="button" class="numBtn" id="btnClr">AC</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-0" id="codePayment" style="display:none"><!--Code Payment--> 
+                <div class ="col text-center">
+                    <div class="input-group mb-3">
+                        <input id="discCode" name="discCode" type="text" class="form-control" placeholder="Enter Discount Code" aria-label="Enter Discount Code" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                            <button id="discCodeBtn" class="btn btn-outline-light" type="button">Apply</button>
+                        </div>
+                    </div>
+                </div>
+            </div>          
+            <div class="row g-0">
+                <div class ="col text-center">
+                    <div class="form-group">
+                        <label for="subTotScrn" id="subTotLabel">Subtotal</label>
+                        <textarea class="form-control" id="subTotScrn" rows="1" readonly></textarea>
+                    </div>
+                    <br>
+                </div>
+            <div class = "row g-0">
+                <div class = "col text-center">
+                    <div class="form-group">
+                        <label for="payScrn">Payment</label>
+                        <textarea class="form-control" id="payScrn" rows="1"></textarea>
+                    </div>
+                    <br>
+                </div>
+            </div>
+            <div class="row g-0 text-center" style="display:none"><!--Container for Keypad-->
+                <div class ="col">
+
+                </div>
+            </div>   
+           
+            <div class="row"><!--Row 2 of the interface-->
+                <div class="col"><!--Col 2.1 Maybe an enter button for numeric entries-->
+                    <div class="d-grid gap-2">
+                        <button data-equals class="myBtn" type="button" id="payBtn">Pay</button>
+                        <button data-delete class="myBtn" type="button" id="delBtn">Del</button>
+                    </div>
+                </div>
+            </div>
+</div>
+<footer>
+   
+</footer>
+
+<script type = text/javascript src = "./ncPOS.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+
+</html>

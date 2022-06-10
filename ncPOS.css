@@ -1,0 +1,180 @@
+
+
+/*
+font-family: 'Lato', sans-serif;
+font-family: 'Water Brush', cursive;
+*/
+
+.myContainer{
+    background-color: #6c98b7;
+    font-family: 'Lato', sans-serif;
+}
+
+.padding{
+    padding: 5% 5% 5% 5%;
+    height:200px;
+}
+
+.headerBox{
+    margin: 0em;    
+}
+.headerBox h1{
+    margin: 2% 2% 2% 2% ;
+    border: 3px #F3D574 ridge;
+    padding:7%;
+    color:white;
+    font-size: 1.25em;
+    font-family:'Lato', sans-serif;
+    background-color:#A3857B;
+    border-radius: 75%;
+    width: fit-content;
+    
+}
+
+#tabNumAlign{
+    margin:5% 0% 0% 0%;
+}
+
+.crdFrm{
+    width:100%;
+}
+
+#orderDisplay{
+    height: 100%;
+    font-size: 1em;
+    border: inset black 1px;
+}
+
+#tabNumDisplay{
+    font-size: 1em;
+    text-align: center;
+    border: solid black 1px;
+}
+#subTotScrn{
+    font-size: 1.5em;
+    text-align: center;
+    border: solid black 1px;
+}
+#payScrn{
+    font-size: 1.5em;
+    text-align: center;
+    border: solid black 1px;
+    background-color: #c8e7fd;
+}
+#payScrn:hover{
+    cursor: pointer;
+    background-color: white;
+
+}
+
+.calculatorGrid{
+    display: gird;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    grid-template-columns: repeat (4, 100px);
+    grid-template-rows: minmax(120px, auto) repeate(5, 100px);
+}
+
+.cardStyle{
+    margin: 5% 2% 5% 2%;
+    border:0px dashed #80665e;
+    padding: 5% 5% 5% 5%;
+    background-color: #fae481ce;
+    box-shadow: 2px 2px 4px rgb(0,0,0,0.75);
+    transition:transform 0.25s, box-shadow 1s; 
+    height:fit-content;
+    width: 95%;
+    border-radius: 5%;
+}
+.cardStyle:hover{
+    margin: 5% 2% 5% 2%;
+    border:0px dashed #80665e;
+    padding: 5% 5% 5% 5%;
+    background-color: #F3D574;
+    height: fit-content;
+    width: 95%;
+    box-shadow: 5px 5px 5px rgb(0,0,0,0.5);
+    cursor: pointer;
+    transform:scale(1.025);
+}
+.cardImgBox{
+    margin:0% 10% 0% 10%;
+    width: 80%;
+    height:90%;
+    overflow: hidden;
+    border-radius: 5%;
+}
+.cardStyle img{
+    width: 100%;
+    overflow: hidden;
+    opacity: 75%;
+}
+.cardStyle h5{
+    margin:10px;
+    padding: 5% 0% 5% 0% ;
+    font-size: 1em;
+    font-weight: 700;
+    color: #57403b;
+    background-color: rgb(255,255,255,0.75);
+    border-radius: 10%;
+}
+.cardStyle a{
+    margin: 0% 0% 0% 0% ;
+    border:1px, solid, #57403b;
+    background-color:#57403b;
+    color:#f8ebc1;
+    font-weight: 600;
+    width:90%;
+    text-decoration: none;
+}
+.cardStyle a:hover{
+    background-color: #f8ebc1; 
+    color:#80665e;
+    cursor: pointer;
+}
+
+.formFields{
+    margin: 2% 0% 2% 0%;
+}
+
+.gridScroll{
+    overflow-y:scroll;
+    overflow-x: hidden;
+    height:80vh;
+}
+
+.numBtn{
+    margin:5% 5% 5% 5%;
+    padding:10% 20% 10% 20%;
+    color: #ffffff;
+    background-color: #57403b;
+    border-radius: 5px;
+    font-size: 1.25em;
+    font-weight: 600;
+}
+.numBtn:hover{
+    background-color: #80665e;
+    font-size: 1.25em;
+    font-weight: 600;
+}
+.myBtn{
+    margin:2% 2% 2% 2%;
+    padding:2% 2% 2% 2%;
+    color: #ffffff;
+    background-color: #57403b;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: 400;
+}
+.myBtn:hover{
+    background-color: #80665e;
+}
+
+#payChoice{
+    cursor: pointer;
+}
+
+#subTotLabel{
+    font-size: 1.25em;
+}
